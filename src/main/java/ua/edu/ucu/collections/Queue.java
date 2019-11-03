@@ -7,23 +7,27 @@ public class Queue {
     public ImmutableLinkedList queue;
 
 
-    public Queue(){
+    public Queue() {
         queue = new ImmutableLinkedList();
     }
 
     Object peek() {
-        if (queue.isEmpty()) throw new IndexOutOfBoundsException("Queue is empty.");
+        if (queue.isEmpty()) {
+            throw new IndexOutOfBoundsException("Queue is empty.");
+        }
         return queue.getLast();
     }
 
-    Object dequeue(){
-        if (queue.isEmpty()) throw new IndexOutOfBoundsException("Queue is empty.");
+    Object dequeue() {
+        if (queue.isEmpty()) {
+            throw new IndexOutOfBoundsException("Queue is empty.");
+        }
         Object f = queue.getLast();
         queue = queue.removeLast();
         return f;
     }
 
-    void enqueue(Object e){
+    void enqueue(Object e) {
         queue = queue.addFirst(e);
     }
 }

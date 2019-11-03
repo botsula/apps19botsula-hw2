@@ -7,22 +7,24 @@ public class Stack {
 
     public ImmutableLinkedList stack;
 
-    Stack(){
+    Stack() {
         stack = new ImmutableLinkedList();
     }
 
-    Object peek(){
-        if (stack.isEmpty()) throw new IndexOutOfBoundsException("Stack is empty.");
+    Object peek() {
+        if (stack.isEmpty()) {
+            throw new IndexOutOfBoundsException("Stack is empty.");
+        }
         return stack.getFirst();
     }
 
-    Object pop(){
+    Object pop() {
         Object s = stack.getFirst();
         stack = stack.removeFirst();
         return s;
     }
 
-    void push(Object e){
+    void push(Object e) {
         stack = stack.addFirst(e);
     }
 }

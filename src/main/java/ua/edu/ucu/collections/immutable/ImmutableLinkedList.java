@@ -60,17 +60,23 @@ public class ImmutableLinkedList implements ImmutableList {
     }
 
     public Object getFirst() {
-        if (len == 0) throw new IndexOutOfBoundsException();
+        if (len == 0) {
+            throw new IndexOutOfBoundsException();
+        }
         return head.val;
     }
 
     public Object getLast() {
-        if (len == 0) throw new IndexOutOfBoundsException();
+        if (len == 0) {
+            throw new IndexOutOfBoundsException();
+        }
         return tail.val;
     }
 
     public ImmutableLinkedList removeFirst() {
-        if (len == 0) throw new IndexOutOfBoundsException();
+        if (len == 0) {
+            throw new IndexOutOfBoundsException();
+        }
         ImmutableLinkedList temp = new ImmutableLinkedList();
         temp.head = head.next;
         temp.len = len - 1;
@@ -79,7 +85,9 @@ public class ImmutableLinkedList implements ImmutableList {
     }
 
     public ImmutableLinkedList removeLast() {
-        if (len == 0) throw new IndexOutOfBoundsException();
+        if (len == 0) {
+            throw new IndexOutOfBoundsException();
+        }
         ImmutableLinkedList temp = new ImmutableLinkedList();
         temp.head = head;
         temp.tail = head;
@@ -113,7 +121,9 @@ public class ImmutableLinkedList implements ImmutableList {
     @Override
     public ImmutableList add(int index, Object e) {
         ImmutableLinkedList temp = new ImmutableLinkedList();
-        if (index >= len) throw new IndexOutOfBoundsException();
+        if (index >= len) {
+            throw new IndexOutOfBoundsException();
+        }
         temp.head = head;
         temp.tail = tail;
         temp.len = len;
@@ -150,7 +160,10 @@ public class ImmutableLinkedList implements ImmutableList {
     public ImmutableList addAll(int index, Object[] c) {
         ImmutableLinkedList temp = new ImmutableLinkedList();
 
-        if (index >= len) throw new IndexOutOfBoundsException();
+        if (index >= len) {
+            throw new IndexOutOfBoundsException();
+        }
+
 
         ImmutableList fin;
         temp.head = head;
@@ -166,7 +179,9 @@ public class ImmutableLinkedList implements ImmutableList {
 
     @Override
     public Object get(int index) {
-        if (index >= len) throw new IndexOutOfBoundsException();
+        if (index >= len) {
+            throw new IndexOutOfBoundsException();
+        }
         Node cur = new Node(head.val, head.next);
         for (int i = 0; i < index; i++) {
             cur = cur.next;
@@ -178,7 +193,9 @@ public class ImmutableLinkedList implements ImmutableList {
     public ImmutableList remove(int index) {
         ImmutableLinkedList temp = new ImmutableLinkedList();
         System.out.println(this.size());
-        if (index >= len) throw new IndexOutOfBoundsException("Index out of range");
+        if (index >= len) {
+            throw new IndexOutOfBoundsException("Index out of range");
+        }
         temp.head = temp.tail = head;
         temp.len = len;
         if (index == 0) {
@@ -199,7 +216,9 @@ public class ImmutableLinkedList implements ImmutableList {
     @Override
     public ImmutableList set(int index, Object e) {
         ImmutableLinkedList temp = new ImmutableLinkedList();
-        if (index >= len) throw new IndexOutOfBoundsException();
+        if (index >= len) {
+            throw new IndexOutOfBoundsException();
+        }
         temp.head = head;
         temp.tail = tail;
         temp.len = len;
@@ -239,7 +258,9 @@ public class ImmutableLinkedList implements ImmutableList {
     @Override
     public Object[] toArray() {
         ImmutableLinkedList temp = new ImmutableLinkedList();
-        if (len == 0) return new Object[0];
+        if (len == 0) {
+            return new Object[0];
+        }
         Object[] array = new Object[len];
         int counter = 0;
         temp.head = temp.tail = head;

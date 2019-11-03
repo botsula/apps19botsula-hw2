@@ -3,7 +3,7 @@ package ua.edu.ucu.collections.immutable;
 import java.util.Arrays;
 
 
-public class ImmutableArrayList implements ImmutableList{
+public class ImmutableArrayList implements ImmutableList {
 
     private static ImmutableArrayList temp = new ImmutableArrayList();
     private static ImmutableList fin;
@@ -27,7 +27,9 @@ public class ImmutableArrayList implements ImmutableList{
 
     @Override
     public ImmutableList add(int index, Object e) {
-        if (index >= len) throw new IndexOutOfBoundsException("Index out of range.");
+        if (index >= len) {
+            throw new IndexOutOfBoundsException("Index out of range.");
+        }
         ImmutableList fin;
         ImmutableArrayList temp = new ImmutableArrayList();
 
@@ -55,7 +57,9 @@ public class ImmutableArrayList implements ImmutableList{
 
     @Override
     public ImmutableList addAll(int index, Object[] c) {
-        if (index >= len) throw new IndexOutOfBoundsException("Index out of range.");
+        if (index >= len) {
+            throw new IndexOutOfBoundsException("Index out of range.");
+        }
         ImmutableList fin;
 
         temp.arr = Arrays.copyOf(arr, len);
@@ -70,13 +74,17 @@ public class ImmutableArrayList implements ImmutableList{
 
     @Override
     public Object get(int index) {
-        if (index >= len) throw new IndexOutOfBoundsException("Index out of range");
+        if (index >= len) {
+            throw new IndexOutOfBoundsException("Index out of range");
+        }
         return arr[index];
     }
 
     @Override
     public ImmutableList remove(int index) {
-        if (index >= len) throw new IndexOutOfBoundsException("Index out of range");
+        if (index >= len) {
+            throw new IndexOutOfBoundsException("Index out of range");
+        }
         ImmutableList fin;
         temp.arr = Arrays.copyOf(arr, index);
         temp.len = index;
@@ -89,7 +97,9 @@ public class ImmutableArrayList implements ImmutableList{
 
     @Override
     public ImmutableList set(int index, Object e) {
-        if (index >= len) throw new IndexOutOfBoundsException();
+        if (index >= len) {
+            throw new IndexOutOfBoundsException();
+        }
         temp.arr = Arrays.copyOf(arr, index);
         temp.len = index;
         fin = temp.add(e);
@@ -101,7 +111,7 @@ public class ImmutableArrayList implements ImmutableList{
 
     @Override
     public int indexOf(Object e) {
-        for (int i = 0; i < len; i++){
+        for (int i = 0; i < len; i++) {
             if (arr[i] == e) {
                 return i;
             }
@@ -122,7 +132,9 @@ public class ImmutableArrayList implements ImmutableList{
 
     @Override
     public boolean isEmpty() {
-        if (len == 0) return true;
+        if (len == 0) {
+            return true;
+        }
         return false;
     }
 
