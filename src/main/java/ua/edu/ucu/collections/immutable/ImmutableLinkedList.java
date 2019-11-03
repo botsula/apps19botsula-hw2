@@ -3,7 +3,7 @@ package ua.edu.ucu.collections.immutable;
 import java.util.Arrays;
 
 
-public class ImmutableLinkedList implements ImmutableList, ImmutableLinkedAdds {
+public class ImmutableLinkedList implements ImmutableList {
 
 
     private Node head;
@@ -26,7 +26,6 @@ public class ImmutableLinkedList implements ImmutableList, ImmutableLinkedAdds {
         len = 0;
     }
 
-    @Override
     public ImmutableLinkedList addFirst(Object e) {
         ImmutableLinkedList temp = new ImmutableLinkedList();
         if (len == 0) {
@@ -42,7 +41,6 @@ public class ImmutableLinkedList implements ImmutableList, ImmutableLinkedAdds {
     }
 
 
-    @Override
     public ImmutableLinkedList addLast(Object e) {
         ImmutableLinkedList temp = new ImmutableLinkedList();
         if (len == 0) {
@@ -61,19 +59,16 @@ public class ImmutableLinkedList implements ImmutableList, ImmutableLinkedAdds {
         return temp;
     }
 
-    @Override
     public Object getFirst() {
         if (len == 0) throw new IndexOutOfBoundsException();
         return head.val;
     }
 
-    @Override
     public Object getLast() {
         if (len == 0) throw new IndexOutOfBoundsException();
         return tail.val;
     }
 
-    @Override
     public ImmutableLinkedList removeFirst() {
         if (len == 0) throw new IndexOutOfBoundsException();
         ImmutableLinkedList temp = new ImmutableLinkedList();
@@ -83,7 +78,6 @@ public class ImmutableLinkedList implements ImmutableList, ImmutableLinkedAdds {
         return temp;
     }
 
-    @Override
     public ImmutableLinkedList removeLast() {
         if (len == 0) throw new IndexOutOfBoundsException();
         ImmutableLinkedList temp = new ImmutableLinkedList();
@@ -98,7 +92,6 @@ public class ImmutableLinkedList implements ImmutableList, ImmutableLinkedAdds {
     }
 
 
-    @Override
     public ImmutableList add(Object e) {
         ImmutableLinkedList temp = new ImmutableLinkedList();
         if (len == 0) {
